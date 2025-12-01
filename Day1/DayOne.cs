@@ -12,44 +12,71 @@ internal class DayOne : AdventDay
 
     public DayOne() : base()
     {
-
-        instructions = Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries).ToList();
+        instructions = [.. Input.Split(Environment.NewLine, StringSplitOptions.TrimEntries)];
     }
-
 
     private void RotateDial(string instruction)
     {
         bool isLeft = char.Equals(instruction[0], 'L');
         int clicks = int.Parse(instruction[1..]);
-        Console.WriteLine("Clicks: " + instruction[1..]);
-        dial = isLeft ? dial - clicks : dial + clicks;
 
-        var rotationCorrection = Math.Abs(dial) / 100;
-        if (dial < 0)
+        dial = isLeft ? dial - clicks : dial + clicks;
+        WrapDial();
+    }
+
+    private void WrapDial()
+    {
+        dial = (dial % 100 + 100) % 100;
+    }
+    private int SimulateRotating(string instruction)
+    {
+        bool isLeft = instruction[0] == 'L';
+        int clicks = int.Parse(instruction[1..]);
+
+        int pastZero = 0;
+
+        for (int i = 0; i < clicks; i++)
         {
-            dial += 100 * rotationCorrection;
+            if (isLeft)
+            {
+                dial = (dial + 1) % 100;
+            }
+            else
+            {
+                dial = (dial - 1 + 100) % 100;
+            }
+
+            if (dial == 0)
+            {
+                pastZero++;
+            }
         }
-        else if (dial > 99)
-        {
-            dial -= 100 * rotationCorrection;
-        }
+
+        return pastZero;
     }
 
     internal override int PartOne()
     {
         int isAtZero = 0;
-        foreach (string instruction in instructions) 
+        foreach (string instruction in instructions)
         {
             RotateDial(instruction);
             if (dial == 0)
+            {
                 isAtZero++;
+            }
         }
         return isAtZero;
     }
 
     internal override int PartTwo()
     {
-        return base.PartTwo();
+        int zeroCounter = 0;
+        foreach (string instruction in instructions)
+        {
+            zeroCounter += SimulateRotating(instruction);
+        }
+        return zeroCounter;
     }
 
 }
