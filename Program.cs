@@ -1,6 +1,13 @@
 ﻿using AdventOfCode2025.Day1;
+using AdventOfCode2025.Utility;
 
-DayOne dayOne = new();
-Console.WriteLine(dayOne.PartOne());
+Dictionary<int, AdventDay> days = new()
+{
+    { 1, new DayOne() }
+};
+
+
+
+
 
 Console.ReadLine();
