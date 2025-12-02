@@ -5,3 +5,11 @@ I have no clue how the first part passed as I noticed after I submitted it that 
 
 ### Part 2
 So after a day at work and some food I realized that math is not for me so I bruteforced this one. I also spent some time cleaning up some logic like the wraping of the numbers. I think if I had just used brute force from the start on one I could have done both during my lunch break but c'est la vie.
+
+
+# Day 2
+
+## Part 1
+I was a bit tierd when I started it but went smooth the only thing is that since the numbers got so large my prepared class that returns an int could not return the correct value as it needed to be a long and you can't cast it right. Reworked it to return a string just to avoid this issue in the futuer.
+
+## Part 2
