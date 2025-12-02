@@ -13,3 +13,4 @@ So after a day at work and some food I realized that math is not for me so I bru
 I was a bit tierd when I started it but went smooth the only thing is that since the numbers got so large my prepared class that returns an int could not return the correct value as it needed to be a long and you can't cast it right. Reworked it to return a string just to avoid this issue in the futuer.
 
 ## Part 2
+I took a dinner break and with the energy of food I rememberd that Regex is a thing. I probebly could have done a better work parsing the input but I got the awnsers one both first trys so I am happy.
