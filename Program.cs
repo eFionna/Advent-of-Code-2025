@@ -8,7 +8,7 @@ Dictionary<int, AdventDay> days = new()
     { 2, new DayTwo() }
 };
 
-Console.WriteLine(days[2].PartOne());
+Console.WriteLine(days[2].PartTwo());
 
 
 

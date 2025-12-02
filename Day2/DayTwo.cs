@@ -1,8 +1,9 @@
 ﻿using AdventOfCode2025.Utility;
+using System.Text.RegularExpressions;
 
 namespace AdventOfCode2025.Day2;
 
-internal class DayTwo : AdventDay
+internal partial class DayTwo : AdventDay
 {
     internal override int Day => 2;
 
@@ -59,13 +60,43 @@ internal class DayTwo : AdventDay
 
         }
 
-
-
-
         return total.ToString();
     }
     internal override string PartTwo()
     {
-        return base.PartTwo();
+        long total = 0;
+
+        List<string> numbers = [];
+        long i;
+        foreach (Tuple<long, long> range in ranges)
+        {
+            numbers.Clear();
+            long start = range.Item1;
+            long end = range.Item2;
+
+            for (i = start; i <= end; i++)
+            {
+                numbers.Add(i.ToString());
+            }
+
+            foreach (string n in numbers)
+            {
+                if (IsRepeated(n))
+                {
+                    total += long.Parse(n);
+                }
+            }
+        }
+
+        return total.ToString();
     }
+
+
+    public static bool IsRepeated(string s)
+    {
+        return RepeatingRegex().IsMatch(s);
+    }
+
+    [GeneratedRegex(@"^(.+)\1+$")]
+    private static partial Regex RepeatingRegex();
 }
