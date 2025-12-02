@@ -55,7 +55,7 @@ internal class DayOne : AdventDay
         return pastZero;
     }
 
-    internal override int PartOne()
+    internal override string PartOne()
     {
         int isAtZero = 0;
         foreach (string instruction in instructions)
@@ -66,17 +66,17 @@ internal class DayOne : AdventDay
                 isAtZero++;
             }
         }
-        return isAtZero;
+        return isAtZero.ToString();
     }
 
-    internal override int PartTwo()
+    internal override string PartTwo()
     {
         int zeroCounter = 0;
         foreach (string instruction in instructions)
         {
             zeroCounter += SimulateRotating(instruction);
         }
-        return zeroCounter;
+        return zeroCounter.ToString();
     }
 
 }

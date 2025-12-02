@@ -12,12 +12,12 @@ internal class AdventDay
         Input = File.ReadAllText(inputFilePath);
     }
 
-    internal virtual int PartOne()
+    internal virtual string PartOne()
     {
-        return int.MinValue;
+        return string.Empty;
     }
-    internal virtual int PartTwo()
+    internal virtual string PartTwo()
     {
-        return int.MinValue;
+        return string.Empty;
     }
 }
