@@ -9,8 +9,8 @@ internal class DayThree : AdventDay
     internal DayThree() : base()
     {
         batterieBanks = [.. Input
-    .Split('\n', StringSplitOptions.RemoveEmptyEntries)
-    .Select(x => x.Trim())];
+        .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+        .Select(x => x.Trim())];
     }
 
     private static int GetLargestJoltage(string bank)
