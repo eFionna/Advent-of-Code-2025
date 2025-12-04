@@ -47,7 +47,7 @@ internal class DayFrour : AdventDay
             for (int y = 0; y < grid.GetLength(1); y++)
             {
 
-                if(grid[x, y] != '@')
+                if (grid[x, y] != '@')
                 {
                     continue;
                 }
@@ -57,13 +57,13 @@ internal class DayFrour : AdventDay
                 {
                     char charAtXY = grid[cx, cy];
 
-                    if(charAtXY != '@')
+                    if (charAtXY != '@')
                     {
                         continue;
                     }
-                    if(charAtXY == '@')
+                    if (charAtXY == '@')
                     {
-                        rollNeighburCount ++;
+                        rollNeighburCount++;
                     }
                 }
                 if (rollNeighburCount < 4)
@@ -78,10 +78,62 @@ internal class DayFrour : AdventDay
 
     internal override string PartTwo()
     {
-        return base.PartTwo();
+        int maxI = 100000;
+        int totalRemoved = 0;
+        while (maxI > 0)
+        {
+            var toRemove = GetAllRemovabel().ToArray();
+
+            if (toRemove.Length == 0)
+            {
+                break;
+            }
+            totalRemoved += toRemove.Length;
+
+            foreach (var (x, y) in toRemove)
+            {
+                grid[x, y] = '.';
+            }
+
+            maxI--;
+        }
+
+        return totalRemoved.ToString();
     }
 
+    IEnumerable<(int x, int y)> GetAllRemovabel()
+    {
+        for (int x = 0; x < grid.GetLength(0); x++)
+        {
+            for (int y = 0; y < grid.GetLength(1); y++)
+            {
 
+                if (grid[x, y] != '@')
+                {
+                    continue;
+                }
+
+                int rollNeighburCount = 0;
+                foreach (var (cx, cy) in GetNeighbors(x, y))
+                {
+                    char charAtXY = grid[cx, cy];
+
+                    if (charAtXY != '@')
+                    {
+                        continue;
+                    }
+                    if (charAtXY == '@')
+                    {
+                        rollNeighburCount++;
+                    }
+                }
+                if (rollNeighburCount < 4)
+                {
+                    yield return (x, y);
+                }
+            }
+        }
+    }
 
 
     IEnumerable<(int x, int y)> GetNeighbors(int x, int y)

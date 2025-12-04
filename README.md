@@ -23,3 +23,10 @@ I did not have a lot of time today but I was lucky that it was a simpel task tod
 ## Part 2
 I hade a bit of troubel with how c# handeld the input so I got the wrong awnser at first.
 
+# Day 4
+
+## Part 1
+Today was also quite easy I do like algorithem based onese inted to math onese
+
+## Part 2
+I am trying to bet better so I wanted to try itterators
