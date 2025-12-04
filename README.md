@@ -14,3 +14,12 @@ I was a bit tierd when I started it but went smooth the only thing is that since
 
 ## Part 2
 I took a dinner break and with the energy of food I rememberd that Regex is a thing. I probebly could have done a better work parsing the input but I got the awnsers one both first trys so I am happy.
+
+# Day 3
+
+## Part 1
+I did not have a lot of time today but I was lucky that it was a simpel task today.
+
+## Part 2
+I hade a bit of troubel with how c# handeld the input so I got the wrong awnser at first.
+
