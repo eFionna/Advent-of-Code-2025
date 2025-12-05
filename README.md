@@ -29,4 +29,12 @@ I hade a bit of troubel with how c# handeld the input so I got the wrong awnser 
 Today was also quite easy I do like algorithem based onese inted to math onese
 
 ## Part 2
-I am trying to bet better so I wanted to try itterators
+I am trying to bet better so I wanted to try itterators.
+
+# Day 5
+
+## Part 1
+I guess I have gotten a lot better since I last tried Advent of Code. It can probebly be more optemized but I have noticed that part 2 is the harder part so since I don't have to much time I just brute force pat 1 to get more time for part 2.
+
+## part 2
+I miss read the asignment at first so had this really neat method to find the higes and lowest in all the ranges but when the test part didn't match I re read it and saw my mistake. Linq dose most of the heavey lifting in this one then it's just some cleanup.

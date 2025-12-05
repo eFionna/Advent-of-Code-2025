@@ -49,7 +49,29 @@ internal class DayFive : AdventDay
 
     internal override string PartTwo()
     {
-        return base.PartTwo();
+        List<(long start, long end)> ranges = [.. ingredientIDRanges.Select(t => (start: t.Item1, end: t.Item2)).OrderBy(t => t.start)];
+
+        long total = 0;
+        long currentStart = ranges[0].start;
+        long currentEnd = ranges[0].end;
+
+        foreach ((long start, long end) in ranges.Skip(1))
+        {
+            if (start <= currentEnd + 1)
+            {
+                currentEnd = Math.Max(currentEnd, end);
+            }
+            else
+            {
+                total += (currentEnd - currentStart + 1);
+                currentStart = start;
+                currentEnd = end;
+            }
+        }
+
+        total += (currentEnd - currentStart + 1);
+
+        return total.ToString();
     }
 
 }
