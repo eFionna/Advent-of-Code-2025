@@ -1,7 +1,4 @@
 ﻿using AdventOfCode2025.Utility;
-using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 namespace AdventOfCode2025.Day6;
 
