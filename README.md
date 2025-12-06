@@ -38,3 +38,11 @@ I guess I have gotten a lot better since I last tried Advent of Code. It can pro
 
 ## part 2
 I miss read the asignment at first so had this really neat method to find the higes and lowest in all the ranges but when the test part didn't match I re read it and saw my mistake. Linq dose most of the heavey lifting in this one then it's just some cleanup.
+
+# Day 6
+
+## Part 1
+When I first saw the input I just thought fuck. But The first part turned out to be really simpel.
+
+## Part 2
+Why the fuck did they have to have such a complex way of doing math. Well I got a lot better at parsing but only the gods know how tf ParseCephalopodWorksheet Works I still don't know exactly how I got it to work but when I had that down the rest was quite easy. I would like to be better at parsing but I also thing that c# was working a bit against me on this one. I ended up using a temporary character X to preserve the spacec so the final numbers would not be compleatly fucked. 
