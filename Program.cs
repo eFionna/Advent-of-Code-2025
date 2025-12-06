@@ -17,6 +17,7 @@ Dictionary<int, AdventDay> days = new()
 };
 
 Console.WriteLine(days[6].PartOne());
+Console.WriteLine();
 Console.WriteLine(days[6].PartTwo());
 
 
