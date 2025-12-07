@@ -16,9 +16,6 @@ internal class DaySeven : AdventDay
     private readonly Tuple<int, int> startPos;
     private readonly int endY;
 
-    int pXLen;
-    int pYLen;
-
     internal DaySeven() : base()
     {
         var split = Input.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
@@ -26,9 +23,6 @@ internal class DaySeven : AdventDay
         int xLen = split[0].Length;
         int yLen = split.Length;
         endY = yLen - 1;
-        pXLen = xLen;
-        pYLen = yLen;
-
 
         tachyonManifold = new char[xLen, yLen];
 
@@ -88,26 +82,6 @@ internal class DaySeven : AdventDay
                 allX.Add(x);
     
             }
-
-            //for (int y = 0; y < pYLen; y++)
-            //{
-            //    for (int x = 0; x < pXLen; x++)
-            //    {
-            //        if (allX.Contains(x) && y == curY)
-            //        {
-            //            Console.ForegroundColor = ConsoleColor.Green;
-            //        }
-
-            //        Console.Write(tachyonManifold[x, y]);
-
-            //        Console.ForegroundColor = ConsoleColor.White;
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.ReadLine();
-            //Console.WriteLine();
-            //Console.WriteLine("##########################");
-            //Console.WriteLine();
         }
         while (curY < endY);
 
