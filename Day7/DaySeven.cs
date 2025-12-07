@@ -1,4 +1,5 @@
 ﻿using AdventOfCode2025.Utility;
+using System.Diagnostics.Metrics;
 namespace AdventOfCode2025.Day7;
 
 internal enum MoveDir
@@ -80,13 +81,70 @@ internal class DaySeven : AdventDay
             foreach (int x in newX)
             {
                 allX.Add(x);
-    
+
             }
         }
         while (curY < endY);
 
-
-
         return splits.ToString();
+    }
+
+    internal override string PartTwo()
+    {
+        int curY = startPos.Item2;
+        Dictionary<int, long> history = new() { { startPos.Item1, 1 } };
+        HashSet<int> allX = [startPos.Item1];
+        do
+        {
+            curY++;
+            List<int> newX = [];
+            List<int> toRemove = [];
+
+            Dictionary<int, long> newHistory = [];
+            foreach (int x in allX)
+            {
+                long ways = history[x];
+
+                if (GetCharAtXY(x, curY) != '.')
+                {
+                    toRemove.Add(x);
+                    newX.Add(x + 1);
+                    newX.Add(x - 1);
+
+                    if (!newHistory.ContainsKey(x + 1))
+                    {
+                        newHistory[x + 1] = 0;
+                    }
+                    newHistory[x + 1] += ways;
+
+                    if (!newHistory.ContainsKey(x - 1))
+                    {
+                        newHistory[x - 1] = 0;
+                    }
+                    newHistory[x - 1] += ways;
+                }
+                else
+                {
+
+                    if (!newHistory.ContainsKey(x))
+                    {
+                        newHistory[x] = 0;
+                    }
+                    newHistory[x] += ways;
+                }
+            }
+            foreach (int x in toRemove)
+            {
+                allX.Remove(x);
+            }
+            foreach (int x in newX)
+            {
+                allX.Add(x);
+            }
+            history = newHistory;
+        }
+        while (curY < endY);
+
+        return history.Values.Sum().ToString();
     }
 }
