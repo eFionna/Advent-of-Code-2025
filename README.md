@@ -46,3 +46,11 @@ When I first saw the input I just thought fuck. But The first part turned out to
 
 ## Part 2
 Why the fuck did they have to have such a complex way of doing math. Well I got a lot better at parsing but only the gods know how tf ParseCephalopodWorksheet Works I still don't know exactly how I got it to work but when I had that down the rest was quite easy. I would like to be better at parsing but I also thing that c# was working a bit against me on this one. I ended up using a temporary character X to preserve the spacec so the final numbers would not be compleatly fucked. 
+
+# Day 7
+
+## Part 1
+I had a bit of a hard time understanding the task at first I tried to do it manualy to see how it worked but I never got 21. But after re-reading it a coupel of times it clicked. There is probebly some mathematical way to solve it rahter then simulate the walking but you know I like to brute force things rather then doing math.
+
+## Part 2
+So I got to read up a bit on many-worlds interpretation something I did not know before or well maybe but not by name. I was reading a bunch and it all seamd like a bunch of math but in the end it's just counting so you can simulate it. And yes I should probebl learn how to do this elegantly with math formulas and all that jazz but after yesterdays Cephalopd insident I am a bit angy at math.
