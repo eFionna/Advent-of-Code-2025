@@ -5,6 +5,7 @@ using AdventOfCode2025.Day4;
 using AdventOfCode2025.Day5;
 using AdventOfCode2025.Day6;
 using AdventOfCode2025.Day7;
+using AdventOfCode2025.Day8;
 using AdventOfCode2025.Utility;
 
 Dictionary<int, AdventDay> days = new()
@@ -15,13 +16,14 @@ Dictionary<int, AdventDay> days = new()
     //{ 4, new DayFrour() },
     //{ 5, new DayFive() },
     //{ 6, new DaySix() },
-    { 7, new DaySeven() },
+    //{ 7, new DaySeven() },
+    { 8, new DayEight() },
 
 };
 
-Console.WriteLine(days[7].PartOne());
+Console.WriteLine(days[8].PartOne());
 Console.WriteLine();
-Console.WriteLine(days[7].PartTwo());
+Console.WriteLine(days[8].PartTwo());
 
 
 
